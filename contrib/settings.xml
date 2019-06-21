@@ -2,13 +2,13 @@
     <servers>
         <server>
              <id>nexus-releases</id>
-             <username>${env.MAVEN_NEXUS_USERNAME}</username>
-             <password>${env.MAVEN_NEXUS_PASSWORD}</password>
+             <username>${MAVEN_NEXUS_USERNAME}</username>
+             <password>${MAVEN_NEXUS_PASSWORD}</password>
          </server>
          <server>
              <id>nexus-snapshots</id>
-             <username>${env.MAVEN_NEXUS_USERNAME}</username>
-             <password>${env.MAVEN_NEXUS_PASSWORD}</password>
+             <username>${MAVEN_NEXUS_USERNAME}</username>
+             <password>${MAVEN_NEXUS_PASSWORD}</password>
          </server>
     </servers>
     <mirrors>
@@ -16,7 +16,7 @@
             <!--This sends everything else to /public -->
             <id>nexus</id>
             <mirrorOf>*</mirrorOf>
-            <url>${env.MAVEN_MIRROR_URL}</url>
+            <url>${MAVEN_MIRROR_URL}</url>
         </mirror>
     </mirrors>
     <profiles>
@@ -24,8 +24,8 @@
             <id>nexus</id>
             <!--repository.url will be used in each project for simplicity-->
             <properties>
-                <nexus.releases>${env.MAVEN_REPO_RELEASE}</nexus.releases>
-                <nexus.snapshots>${env.MAVEN_REPO_SNAPSHOT}</nexus.snapshots>
+                <nexus.releases>${MAVEN_REPO_RELEASE}</nexus.releases>
+                <nexus.snapshots>${MAVEN_REPO_SNAPSHOT}</nexus.snapshots>
             </properties>
             <!--Enable snapshots for the built in central repo to direct -->
             <!--all requests to nexus via the mirror -->
