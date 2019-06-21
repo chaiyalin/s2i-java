@@ -45,10 +45,10 @@ COPY ./contrib/settings.xml $HOME/.m2/
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 COPY ./sti/bin/ /usr/local/sti
 
-RUN chown -R 1001:1001 /opt/openshift
+RUN chown -R 1000:1000 /opt/openshift
 
 # This default user is created in the openshift/base-centos7 image
-USER 1001
+USER 1000
 
 # Set the default port for applications built using this image
 EXPOSE 8080 
